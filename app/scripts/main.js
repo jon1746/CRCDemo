@@ -16,7 +16,7 @@ angular.module('app')
       isSmartDevice( $window ) && angular.element($window.document.body).addClass('smart');
       // config
       $scope.app = {
-        name: 'HeyMetro',
+        name: 'CRC Demo',
         version: '1.0.0',
         // for chart colors
         color: {
