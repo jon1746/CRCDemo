@@ -3,8 +3,8 @@ app.controller('GoogleMapCtrl', ['$scope', function ($scope) {
     $scope.myMarkers = [];
 
     $scope.mapOptions = {
-      center: new google.maps.LatLng(35.784, -98.670),
-      zoom: 4,
+      center: new google.maps.LatLng(26.194876675795218, -80.947265625),
+      zoom: 8,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
