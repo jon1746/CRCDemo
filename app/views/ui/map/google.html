@@ -3,6 +3,9 @@
     <div class="p-h-md p-v bg-white box-shadow pos-rlt">
       <h3 class="no-margin">Google Maps</h3>
     </div>
+    
+   
+    
     <div class="box-row">
       <div class="box-cell">
         <div class="box-inner">
@@ -50,7 +53,7 @@
             </div>
             <div class="col-md-9">
               <div style="position:relative; height:100%; min-height:320px" ui-map="myMap"
-                   ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
+                   ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' ,'map-tilesloaded': 'onTilesLoaded()'}"
                    ui-options="mapOptions">
               </div>
             </div>

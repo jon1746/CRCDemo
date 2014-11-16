@@ -3,8 +3,8 @@ app.controller('GoogleMapCtrl', ['$scope', function ($scope) {
     $scope.myMarkers = [];
 
     $scope.mapOptions = {
-      center: new google.maps.LatLng(26.194876675795218, -80.947265625),
-      zoom: 8,
+      center: new google.maps.LatLng(26.029344, -80.144177),
+      zoom: 13,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -29,4 +29,39 @@ app.controller('GoogleMapCtrl', ['$scope', function ($scope) {
     $scope.setMarkerPosition = function (marker, lat, lng) {
       marker.setPosition(new google.maps.LatLng(lat, lng));
     };
+    
+    $scope.onTilesLoaded = function () {
+    	
+         var geoFenceCoords = 
+         
+         [[
+             new google.maps.LatLng(26.052055, -80.135207),
+             new google.maps.LatLng(26.051130, -80.128341),
+             new google.maps.LatLng(26.041413, -80.127053),
+             new google.maps.LatLng(26.044806, -80.134950)
+             
+          ]
+         ];
+         
+         
+
+
+    	 var firstLoad = true;
+         return function() {
+             if (firstLoad)
+             {
+                 $scope.geoFence = new google.maps.Polygon({
+                   paths: geoFenceCoords,
+                   strokeWeight: 2,
+                   fillOpacity: 0.2
+                 });
+
+                 $scope.geoFence.setMap($scope.myMap);
+                 firstLoad = false; 
+            	 
+             }
+         }
+    	
+      }();
+
 }]);
